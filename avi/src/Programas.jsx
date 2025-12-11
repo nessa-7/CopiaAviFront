@@ -1,5 +1,17 @@
+import { useEffect, useState } from "react";
 
 const Programas = () => {
+
+  const [programas, setProgramas] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/api/programas")
+      .then(res => res.json())
+      .then(data => setProgramas(data))
+      .catch(err => console.error(err));
+  }, []);
+
+
   return (
     <main className="programas">
       <h2>Programas del SENA</h2>
@@ -11,12 +23,6 @@ const Programas = () => {
           <option value="TECNOLOGO">Tecnólogo</option>
         </select>
 
-        <select id="areaFiltro">
-          <option value="">Todas las áreas</option>
-          <option value="Matemáticas">Matemáticas</option>
-          <option value="Software">Software</option>
-          <option value="Electrónica">Electrónica</option>
-        </select>
       </div>
 
       <table>
@@ -27,8 +33,15 @@ const Programas = () => {
             <th>Descripción</th>
           </tr>
         </thead>
-        <tbody id="tablaProgramas">
-        </tbody>
+          <tbody>
+            {programas.map(p => (
+              <tr key={p.idPROGRAMA}>
+                <td>{p.nivel}</td>
+                <td>{p.nombre}</td>
+                <td>{p.descripcion}</td>
+              </tr>
+            ))}
+          </tbody>
       </table>
     </main>
   );

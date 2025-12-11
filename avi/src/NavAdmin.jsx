@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom'
 
-function Nav(){
+function NavAdmin(){
 
     return(
         <div>
@@ -11,14 +11,12 @@ function Nav(){
                 </Link>
 
                 <div className='nav-left'>
-                    <Link to="/bienvenidatest">Test</Link>
-                    <Link to="/programas">Programas</Link>
+                    <Link to="/estadisticas">Estadisticas</Link>
+                    <Link to="/registroadmin">Registrar Admin</Link>
                     <Link to="/mapa">Mapa</Link>
                 </div>
 
                 <div className="nav-right">
-                    <Link to="/login" className='btn-nav btn-login'>Login</Link>
-                    <Link to="/registro" className='btn-nav btn-register'>Registro</Link>
                 </div>
                     
             </nav>
@@ -28,4 +26,4 @@ function Nav(){
 
 
 
-export default Nav
+export default NavAdmin

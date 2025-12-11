@@ -3,12 +3,18 @@ import Swal from 'sweetalert2'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
+import { useAuth } from "./context/AuthContext";
+
 function Login() {
 
     const navigate = useNavigate();
 
     const [id, setId] = useState("");
     const [pass, setPass] = useState("");
+
+    const {guardarToken} = useAuth();
+    const {guardarNombre} = useAuth(); 
+    const {guardarRol} = useAuth();
 
 
     async function Ingresar(event) {
@@ -24,19 +30,25 @@ function Login() {
             body: JSON.stringify({ id: idEntero, pass }),
         });
 
+        const data = await respuesta.json();
+        console.log(data)
+
+            guardarToken(data.token);
+            guardarNombre(data.usuario.nombre_completo);
+            guardarRol(data.usuario.rol)
+
+            console.log(data.usuario.nombre_completo);
+
         if (respuesta.ok) {
 
-            const data = await respuesta.json()
-            localStorage.setItem("token", data.token)
-            localStorage.setItem("rol", data.rol)
-            localStorage.setItem("nombre", data.nombre_completo)
+            
 
             Swal.fire({
                 icon: "success",
                 title: "¡Bienvenido a AVI!",
                 confirmButtonColor: "#39a900",
             }).then(() => {
-                if(data.rol === "admin"){
+                if(guardarRol === "admin"){
                     navigate("/Estadisticas")
                 } else {
                     navigate("/BienvenidaTest")

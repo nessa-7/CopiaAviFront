@@ -1,13 +1,36 @@
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useAuth } from "./context/AuthContext";
+
 
 function BienvenidaTest() {
+
+  const NOMBREASPIRANTE_API = import.meta.env.NOMBREASPIRANTE_API
+
   const navigate = useNavigate();
+
+  const {token} = useAuth();
+    const {nombre} = useAuth();
+
 
   function iniciartest() {
     navigate("/test");
   }
 
-  const nombre = localStorage.getItem("nombre")
+  useEffect(() => {
+        traer()
+    }, [])
+
+    async function traer(){
+        const respuesta = await fetch(`${NOMBREASPIRANTE_API}`,{
+            method: 'GET',
+            headers:{
+                Authorization: "bearer" + token
+            }
+        })
+        const res = await respuesta.json();
+        console.log(res);
+    }
 
   return (
     <div>
@@ -21,7 +44,7 @@ function BienvenidaTest() {
             </div>
 
             <div className="test-info">
-              <h2>Sobre el Test Vocacional</h2>
+              <h2>Sobre el Test Vocacional </h2>
               <div className="info-cards">
                 <div className="info-card-small">
                   <div className="card-icon">⏱️</div>
