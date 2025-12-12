@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import {AuthPro, useAuth } from "./context/AuthContext";
 
-import Nav from "./Nav";
+
 import './App.css'
 import BienvenidaTest from "./BienvenidaTest";
 import Test from "./Test";
@@ -13,16 +14,19 @@ import Inicio from "./Inicio";
 import Estadisticas from "./Estadisticas";
 import RegistroAdmins from "./RegistroAdmins";
 import AspirantesGet from "./AspirantesGet";
+import LoginAdmin from "./LoginAdmin";
+import Seleccion from "./Seleccion";
+import Navbar from "./Navbar";
 
-import {AuthPro, useAuth } from "./context/AuthContext";
 
 function App() {
 
   return (
       <div>
+      <AuthPro>
         <BrowserRouter>
-          <Nav></Nav>
-          <AuthPro>
+          
+            <Navbar></Navbar>
             <Routes>
               <Route path="/" element={<Inicio></Inicio>}></Route>
               <Route path="/bienvenidatest" element={<BienvenidaTest></BienvenidaTest>}></Route>
@@ -35,10 +39,12 @@ function App() {
               <Route path="/estadisticas" element={<Estadisticas></Estadisticas>}></Route>
               <Route path="/registroadmin" element={<RegistroAdmins></RegistroAdmins>}></Route>
               <Route path="/listaraspirantes" element={<AspirantesGet></AspirantesGet>}></Route>
+              <Route path="/loginadmin" element={<LoginAdmin></LoginAdmin>}></Route>
+              <Route path="/seleccion" element={<Seleccion></Seleccion>}></Route>
             </Routes>
-          </AuthPro>
+          
         </BrowserRouter>
-
+      </AuthPro>
       </div>
   )
 }

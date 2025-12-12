@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import { useAuth } from "./context/AuthContext";
 
-function Login() {
+function LoginAdmin() {
 
     const navigate = useNavigate();
 
@@ -22,7 +22,7 @@ function Login() {
 
         const idEntero = parseInt(id)
 
-        const respuesta = await fetch("http://localhost:4000/api/loginaspirante", {
+        const respuesta = await fetch("http://localhost:4000/api/loginadmin", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,16 @@ function Login() {
         const data = await respuesta.json();
         console.log(data)
 
-        
+
+        if (data.mensaje==="Credenciales incorrectas") {
+            Swal.fire({
+                icon: "error",
+                title: "Datos incorrectos",
+                confirmButtonColor: "#39a900",
+            })
+            return
+        }
+
         if (!respuesta.ok) {
             Swal.fire({
                 icon: "error",
@@ -44,25 +53,23 @@ function Login() {
         }
 
             guardarToken(data.token);
-            guardarNombre(data.usuario.nombre_completo);
+            guardarNombre(data.nombre);
             guardarRol(data.rol)
 
-            console.log(data.usuario.nombre_completo);
+            console.log(data.rol);
 
-            console.log(data.rol)
-
-        if (respuesta.ok) {
+        
 
             Swal.fire({
                 icon: "success",
                 title: "¡Bienvenido a AVI!",
                 confirmButtonColor: "#39a900",
             }).then(() => {
-                    navigate("/BienvenidaTest")
+                    navigate("/Estadisticas")
             })
 
-        } 
-
+        
+        
     }
 
 
@@ -71,7 +78,7 @@ function Login() {
             <div className="auth-container">
                 <div className="auth-header">
                     <h1>Iniciar Sesión</h1>
-                    <p>Accede a tu cuenta para continuar con el test vocacional</p>
+                    <p>Accede a tu cuenta como Administrador </p>
                 </div>
 
                 <form id="loginForm" className="auth-form" onSubmit={Ingresar}>
@@ -87,15 +94,12 @@ function Login() {
                         <span className="error-message" id="password-error"></span>
                     </div>
 
-                    <button type="submit" className="auth-button" >Ingresar</button>
+                    <button type="submit" className="auth-button">Ingresar</button>
                 </form>
 
-                <div className="auth-footer">
-                    <p>¿No tienes cuenta? <a href="/registro" className="loader-link">Regístrate aquí</a></p>
-                </div>
             </div>
         </section>
     );
 }
 
-export default Login;
+export default LoginAdmin;

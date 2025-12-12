@@ -16,10 +16,7 @@ function Nav(){
                     <Link to="/mapa">Mapa</Link>
                 </div>
 
-                <div className="nav-right">
-                    <Link to="/login" className='btn-nav btn-login'>Login</Link>
-                    <Link to="/registro" className='btn-nav btn-register'>Registro</Link>
-                </div>
+                
                     
             </nav>
         </div>

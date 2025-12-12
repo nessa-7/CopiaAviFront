@@ -1,5 +1,13 @@
+import {useNavigate} from "react-router-dom"
 
 export default function Inicio() {
+
+  const navigate = useNavigate();
+      
+        function irRegistro() {
+          navigate("/registro");
+        }
+
   return (
     <div>
       <section class="hero">
@@ -10,7 +18,7 @@ export default function Inicio() {
           ¿Buscas estudiar alguno de los técnicos o tecnólogos que ofrece el SENA? <br />
           AVI te ayuda a evaluar tus talentos y habilidades para escoger el programa de formación más adecuado para ti.
         </p>
-        <button class="cta-button" onClick="window.location.href='registro.html'">Regístrate Ahora</button>
+        <button class="cta-button" onClick={irRegistro}>Regístrate Ahora</button>
       </div>
       <div class="hero-image">
         <img src="/aprendices.jpg" alt="Aprendices SENA" class="hero-img" />
