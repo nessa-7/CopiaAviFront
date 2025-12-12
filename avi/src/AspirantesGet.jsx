@@ -35,7 +35,7 @@ function AspirantesGet() {
 
   return (
     <div className="tabla-container">
-      <h2 className="titulo">Lista de Aspirantes</h2>
+      <h2 className="tituloasp">Lista de Aspirantes</h2>
 
       <table className="tabla-aspirantes">
         <thead>
@@ -44,6 +44,7 @@ function AspirantesGet() {
             <th>Nombre </th>
             <th>Email</th>
             <th>Teléfono</th>
+            <th>Ver Reportes</th>
             <th>Bloqueado/desbloqueado</th>
             <th>Actualizar</th>
             <th>Eliminar</th>
@@ -57,6 +58,15 @@ function AspirantesGet() {
               <td>{a.nombre_completo}</td>
               <td>{a.email}</td>
               <td>{a.telefono}</td>
+
+              <td>
+                <button
+                  className="btn-reportes"
+                  onClick={() => verReportes(a.idASPIRANTE)}
+                >
+                  Ver Reportes
+                </button>
+              </td>
 
               <td>
                 <button

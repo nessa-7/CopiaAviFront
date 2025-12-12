@@ -26,10 +26,10 @@ const Resultado = () => {
         </section>
 
         <section className="acciones">
-          <a href="programas.html" className="nav-link loader-link">
+          <a href="/programas" className="nav-link loader-link">
             <button className="nav-link register-btn">Ver más programas</button>
           </a>
-          <a href="bienvenida-test.html" className="nav-link loader-link">
+          <a href="/bienvenidatest" className="nav-link loader-link">
             <button>Volver a intentar</button>
           </a>
         </section>

@@ -81,7 +81,7 @@ function RegistroAdmins() {
           </form>
 
           <div className="auth-footer">
-            <p> Ver todos los administradores <a href="/login">aqui</a></p>
+            <p> Ver todos los administradores <a href="/listaradmins">aqui</a></p>
           </div>
         </div>
       </section>

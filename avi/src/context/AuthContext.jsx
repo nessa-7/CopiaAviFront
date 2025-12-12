@@ -24,8 +24,14 @@ export const AuthPro = ({children})=>{
         setRol(rol)
     }
 
+    const logout=()=>{
+        setToken(null);
+        setNombre("");
+        setRol(null);
+    }
+
     return(
-        <AuthContext.Provider value={{token,guardarToken, nombre, guardarNombre, rol, guardarRol}}>
+        <AuthContext.Provider value={{token,guardarToken, nombre, guardarNombre, rol, guardarRol, logout}}>
             {children}
         </AuthContext.Provider>
     )

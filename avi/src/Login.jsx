@@ -34,6 +34,16 @@ function Login() {
         console.log(data)
 
         
+        
+        if (data.mensaje==="Credenciales incorrectas") {
+            Swal.fire({
+                icon: "error",
+                title: "Datos incorrectos",
+                confirmButtonColor: "#39a900",
+            })
+            return
+        }
+
         if (!respuesta.ok) {
             Swal.fire({
                 icon: "error",

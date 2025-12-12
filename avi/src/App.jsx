@@ -17,6 +17,7 @@ import AspirantesGet from "./AspirantesGet";
 import LoginAdmin from "./LoginAdmin";
 import Seleccion from "./Seleccion";
 import Navbar from "./Navbar";
+import AdminGet from "./AdminGet";
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
               <Route path="/listaraspirantes" element={<AspirantesGet></AspirantesGet>}></Route>
               <Route path="/loginadmin" element={<LoginAdmin></LoginAdmin>}></Route>
               <Route path="/seleccion" element={<Seleccion></Seleccion>}></Route>
+              <Route path="/listaradmins" element={<AdminGet></AdminGet>}></Route>
             </Routes>
           
         </BrowserRouter>

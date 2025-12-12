@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 function Test(){
+    const Navigate = useNavigate();
 
     function terminarTest() {
-        alert("¡Test finalizado!");
+        Navigate("/resultado");
     }
 
 return(
