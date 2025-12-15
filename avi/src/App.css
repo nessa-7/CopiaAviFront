@@ -57,7 +57,7 @@ nav a:hover {
 .nav-left {
   display: flex;
   align-items: center;
-  padding: 0.6rem 10rem;
+  padding: 0.6rem 1rem;
   margin-left: 20rem;
   gap: 7rem;
 }
@@ -811,189 +811,6 @@ nav a:hover {
 
 
 
-/* ----------------------
-  Responsive additions
-   Breakpoints:
-   - Large desktop: 1200px+
-   - Desktop: 992px - 1199px
-   - Tablet: 768px - 991px
-   - Mobile: <= 767px
-   ---------------------- */
-
-/* Make main containers fluid and limit widths with max-widths */
-.vocacional-form {
-  width: 90%;
-  max-width: 1000px; /* preserves your original layout on wide screens */
-  padding: 30px 0;
-}
-
-.vocacional-form .container {
-  padding: 20px;
-}
-
-/* Hero: switch to single column on smaller screens */
-.hero .container {
-  grid-template-columns: 1fr 1fr;
-}
-
-@media (max-width: 991.98px) {
-  .hero .container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  .hero {
-    padding: 3rem 0;
-    min-height: auto;
-  }
-
-  .hero-title {
-    font-size: 2.25rem;
-  }
-
-  .hero-text {
-    font-size: 1rem;
-  }
-
-  .welcome-title {
-    font-size: 2rem;
-  }
-
-  .welcome-section {
-    padding: 2rem 0;
-  }
-
-  /* Navbar adjustments for tablet */
-  nav {
-    padding: 12px 16px;
-    gap: 0.5rem;
-    border-radius: 0;
-  }
-
-  .nav-left { gap: 2rem; padding: 0.2rem 0.6rem; }
-  .nav-right { gap: 0.6rem; }
-
-  .btn-nav { padding: 0.35rem 0.8rem; font-size: .95rem; }
-  .logo-img { height: 36px; }
-}
-
-/* Tablet -> Mobile: stack nav, reduce paddings, scale fonts */
-@media (max-width: 767.98px) {
-
-  /* NAV: stack items vertically, allow wrapping */
-  nav {
-    flex-direction: column;
-    align-items: stretch;
-    row-gap: 10px;
-    padding: 12px;
-    border-radius: 0;
-  }
-
-  .nav-left, .nav-right {
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 8px;
-    gap: 0.5rem;
-  }
-
-  .nav-left {
-    order: 1;
-    gap: 1rem;
-  }
-
-  .nav-right {
-    order: 2;
-    justify-content: flex-end;
-  }
-
-  /* make logo and links responsive */
-  .logo-img { height: 32px; margin-right: 0.4rem; }
-  .logo-link { align-items: center; }
-
-  nav a { margin: 0 .4rem; font-size: 0.95rem; padding: 0.25rem 0.5rem; }
-
-  /* Buttons smaller on mobile */
-  .btn-nav { padding: 0.3rem 0.6rem; font-size: 0.9rem; border-radius: 18px; }
-  .btn-register { font-size: 0.95rem; }
-
-  /* Welcome + info cards: reduce widths & spacing */
-  .welcome-content { padding: 0 1rem; }
-  .welcome-title { font-size: 1.8rem; }
-
-  .info-cards { gap: 0.75rem; }
-  .info-card-small { padding: 1rem; }
-
-  .instructions { padding: 1rem; margin-bottom: 1rem; }
-  .start-test-button {
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    width: 100%;
-  }
-
-  /* Vocacional form fields */
-  .vocacional-form h2 { font-size: 1.6rem; margin-bottom: 20px; }
-  .vocacional-form {
-    padding: 20px 0;
-    width: 92%;
-  }
-  .vocacional-form .container { padding: 16px; }
-
-  .vocacional-form input[type="text"] {
-    font-size: 1rem;
-    padding: 10px;
-  }
-
-  .vocacional-form label { font-size: 1rem; padding: 10px; }
-
-  .vocacional-form button[type="button"] {
-    padding: 12px;
-    font-size: 1rem;
-  }
-
-  /* Auth section */
-  .auth-container { max-width: 92%; padding: 1.25rem; border-radius: 12px; }
-  .auth-header h1 { font-size: 1.5rem; }
-  .auth-form { gap: 1rem; }
-
-  /* Results and cards */
-  .resultados { padding: 20px; }
-  .resumen, .sugerencias { padding: 16px; }
-
-  /* Programs table -> stacked cards for mobile */
-  .programas table { display: none; } /* hide table on small screens */
-  .programs-list-mobile { display: block; } /* show mobile list if you add it */
-  .programs-preview, .info-section { padding: 2rem 1rem; }
-
-  /* Map container smaller */
-  #container-info { width: 100%; font-size: 18px; padding-left: 0; padding-right: 0; }
-
-  /* hero image adjustments */
-  .hero-img { max-height: 300px; object-fit: cover; }
-}
-
-/* Small tweaks for very large screens */
-@media (min-width: 1400px) {
-  .hero-title { font-size: 3.6rem; }
-  .welcome-title { font-size: 3rem; }
-  .vocacional-form .container { padding: 30px 80px; }
-}
-
-/* Accessibility + layout helpers */
-
-/* Optional: utility to show mobile program cards if you switch from table -> cards */
-.programs-list-mobile {
-  display: none;
-  max-width: 1100px;
-  margin: 0 auto;
-  gap: 1rem;
-}
-@media (max-width: 767.98px) {
-  .programs-list-mobile { display: grid; grid-template-columns: 1fr; }
-  .programs-list-mobile .program-card { margin-bottom: 0.75rem; }
-}
-
-
 
 
 /* Estadisticas */
@@ -1091,12 +908,13 @@ nav a:hover {
   
  .cards-login {
       display: grid;
-      grid-template-columns: repeat(auto-fit, 400px);
+      grid-template-columns: repeat(auto-fit, 550px);
       text-align: center;
       justify-content: center;
-      gap: 50px;
+      gap: 100px;
       margin-bottom: 60px;
-      margin: 40px;
+      margin: 50px;
+      margin-top: 100px;
       cursor: pointer;
     }
 
@@ -1114,13 +932,39 @@ nav a:hover {
   box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 
+.h2asp{
+  color: #40d33b;
+      
+}
+
+
+.h2ad {
+      color: #9e4dc4;
+      margin-bottom: 12px;
+    }
+
+
 .card-text {
-  font-size: 15px;
+  font-size: 18px;
   color: #555;
   margin-top: 20px;
   margin-bottom: 20px;
   line-height: 1.4;
    text-align: justify;
+}
+
+.card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.card-img2 {
+  width: 70%;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 10px;
 }
 
 
@@ -1138,6 +982,7 @@ nav a:hover {
   text-align: center;
   justify-content: center;
   margin: auto;
+  
 }
 
 .tituloasp {
@@ -1155,7 +1000,7 @@ nav a:hover {
   text-align: center;
   justify-content: center;
   margin: auto;
-  
+  background-color: rgb(255, 255, 255);
 }
 
 
@@ -1200,4 +1045,249 @@ nav a:hover {
   padding: 0.4rem 1rem;
   border-radius: 20px;
   border: 2px solid #ca0e0e;
+}
+
+
+.btn-reportes {
+  background-color: #ec9c5a;
+  color: #9c4512;
+  border: 2px solid #ca880e;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+.btn-reportes:hover {
+  background-color: #dd5e09;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 2px solid #ca7f0e;
+}
+
+
+.btn-bloquear {
+  background-color: #93e5de;
+  color: #129c9c;
+  border: 2px solid #0ecac1;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+.btn-bloquear:hover {
+  background-color: #09c4dd;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 2px solid #0ebdca;
+}
+
+
+.btn-desbloquear {
+  background-color: #e593da;
+  color: #9c1285;
+  border: 2px solid #c40eca;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+}
+
+.btn-desbloquear:hover {
+  background-color: #dd09cb;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  border: 2px solid #c40eca;
+}
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   RESPONSIVE GLOBAL
+================================ */
+
+/* Evitar scroll horizontal */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Contenedor flexible */
+.container {
+  padding: 0 1rem;
+}
+
+/* ===============================
+   NAV RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-left,
+  .nav-right {
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-logout {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  nav a {
+    margin: 0.3rem;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+}
+
+/* ===============================
+   HERO / INICIO
+================================ */
+@media (max-width: 992px) {
+  .hero .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===============================
+   WELCOME / TEST INFO
+================================ */
+@media (max-width: 768px) {
+  .welcome-title {
+    font-size: 2rem;
+  }
+
+  .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .start-test-button {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* ===============================
+   FORMULARIO VOCACIONAL
+================================ */
+@media (max-width: 992px) {
+  .vocacional-form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .vocacional-form .container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .vocacional-form h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===============================
+   AUTH / LOGIN / REGISTRO
+================================ */
+@media (max-width: 576px) {
+  .auth-container {
+    padding: 1.5rem;
+    border-radius: 12px;
+  }
+
+  .auth-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===============================
+   PROGRAMAS
+================================ */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .programas table {
+    font-size: 14px;
+  }
+}
+
+/* ===============================
+   TABLAS (ASPIRANTES, PROGRAMAS)
+================================ */
+.table-container {
+  overflow-x: auto;
+}
+
+.tabla-aspirantes,
+.programas table {
+  min-width: 600px;
+}
+
+/* ===============================
+   CARDS LOGIN / SELECCIÓN
+================================ */
+@media (max-width: 992px) {
+  .cards-login {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 2rem 1rem;
+  }
+}
+
+/* ===============================
+   ESTADÍSTICAS
+================================ */
+@media (max-width: 768px) {
+  .program-section {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   MAPA
+================================ */
+@media (max-width: 576px) {
+  #container-info {
+    width: 100%;
+    font-size: 16px;
+  }
 }

@@ -7,6 +7,8 @@ import { useAuth } from "./context/AuthContext";
 
 function Login() {
 
+     const LOGINASPIRANTE_API = import.meta.env.VITE_API_LOGINASPIRANTE
+
     const navigate = useNavigate();
 
     const [id, setId] = useState("");
@@ -22,7 +24,7 @@ function Login() {
 
         const idEntero = parseInt(id)
 
-        const respuesta = await fetch("http://localhost:4000/api/loginaspirante", {
+        const respuesta = await fetch(`${LOGINASPIRANTE_API}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -3,6 +3,9 @@ import { useState } from "react";
 
 function RegistroAdmins() {
 
+    const REGISTROADMINS_API = import.meta.env.VITE_API_REGISTROADMINS
+
+
   const [idADMIN, setId] = useState("");
   const [nombre, setNombre] = useState("");
   const [email, setEmail] = useState("");
@@ -13,7 +16,7 @@ function RegistroAdmins() {
 
         const idEntero = parseInt(idADMIN)
 
-        const respuesta = await fetch("http://localhost:4000/api/registroadmin", {
+        const respuesta = await fetch(`${REGISTROADMINS_API}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -80,9 +83,7 @@ function RegistroAdmins() {
             <button type="submit" className="auth-button">Registrar</button>
           </form>
 
-          <div className="auth-footer">
-            <p> Ver todos los administradores <a href="/listaradmins">aqui</a></p>
-          </div>
+          
         </div>
       </section>
     </>

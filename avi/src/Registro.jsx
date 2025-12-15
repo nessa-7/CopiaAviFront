@@ -3,6 +3,8 @@ import { useState } from "react";
 
 function Registro() {
 
+  const REGISTROASPIRANTES_API = import.meta.env.VITE_API_REGISTROASPIRANTES
+
   const [idASPIRANTE, setId] = useState("");
   const [nombre_completo, setNombre] = useState("");
   const [email, setEmail] = useState("");
@@ -14,7 +16,7 @@ function Registro() {
 
         const idEntero = parseInt(idASPIRANTE)
 
-        const respuesta = await fetch("http://localhost:4000/api/registeraspirante", {
+        const respuesta = await fetch(`${REGISTROASPIRANTES_API}`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

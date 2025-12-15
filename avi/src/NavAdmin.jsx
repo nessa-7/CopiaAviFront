@@ -39,7 +39,7 @@ function NavAdmin(){
                     <Link to="/estadisticas">Estadisticas</Link>
                     <Link to="/registroadmin">Registrar Admin</Link>
                     <Link to="/listaraspirantes">Gestionar Aspirantes</Link>
-
+                    <Link to="/listaradmins">Gestionar Admins</Link>
                     <button className='btn-nav btn-logout' onClick={salir}>Cerrar Sesion</button>
 
                 </div>

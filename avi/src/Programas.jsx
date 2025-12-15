@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 
 const Programas = () => {
 
+  const PROGRAMAS_API = import.meta.env.VITE_API_PROGRAMAS
+
   const [programas, setProgramas] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/programas")
+    fetch(`${PROGRAMAS_API}`)
       .then(res => res.json())
       .then(data => setProgramas(data))
       .catch(err => console.error(err));

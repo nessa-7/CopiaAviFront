@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 
 function AspirantesGet() {
+
+   const VITE_API_GETASPIRANTES = import.meta.env.VITE_API_GETASPIRANTES
+  
+  const API = VITE_API_GETASPIRANTES;
+
   const [aspirantes, setAspirantes] = useState([]);
-  const API = "http://localhost:4000/api/aspirantes";
+  
 
   const obtenerAspirantes = async () => {
     const res = await fetch(API);

@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 
 function AdminGet() {
+
+  const VITE_API_GETADMINS = import.meta.env.VITE_API_GETADMINS
+  
+  const API = VITE_API_GETADMINS;
+
   const [admins, setAdmins] = useState([]);
-  const API = "http://localhost:4000/api/admins";
 
   const obtenerAdmins = async () => {
     const res = await fetch(API);
